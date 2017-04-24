@@ -1,24 +1,23 @@
-# README
+# Setup
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Requirements
 
-Things you may want to cover:
+* Ruby 2.2.2 or later
+* SQLite3
+* Bundler 1.14.6 or later
 
-* Ruby version
+## Getting up and running
 
-* System dependencies
+Run `bundle install` to install all dependencies
 
-* Configuration
+Run `rake db:setup` to get your database setup and seeded
 
-* Database creation
+Run `rails s` to start up the server
 
-* Database initialization
+Run `rspec` to run all tests
 
-* How to run the test suite
+# Thoughts
 
-* Services (job queues, cache servers, search engines, etc.)
+Pagination and indexing will definitely be required if the app is to scale in size.
 
-* Deployment instructions
-
-* ...
+The seeded songs have pretty generic naming, but the test cases do use more specific names and titles
