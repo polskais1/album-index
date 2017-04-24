@@ -15,9 +15,9 @@ artists = [
 artists.each do |artist|
   puts "seeding albums and songs for #{artist.name}"
   10.times do |albums_i|
-    album = Album.create(title: "#{artist.name}'s album no. #{albums_i + 1}", artist: artist)
+    album = Album.create(title: "Album no. #{albums_i + 1}", artist: artist)
     5.times do |songs_i|
-      Song.create(title: "#{album.title}'s track no. #{songs_i + 1}", album: album)
+      Song.create(title: "Track no. #{songs_i + 1}", album: album)
       print '.'
     end
   end

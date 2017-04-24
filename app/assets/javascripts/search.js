@@ -1,6 +1,6 @@
 $().ready(function() {
   var searchFieldTimeoutId;
-  var $songsContainer = $('#songs-container');
+  var $resultsContainer = $('#results-container');
 
   $("#search-field").keyup(function(event) {
     clearTimeout(searchFieldTimeoutId);
@@ -18,14 +18,18 @@ $().ready(function() {
   });
 
   function renderResults(results) {
-    $songsContainer.empty();
+    $resultsContainer.empty();
     results.forEach(function(result) {
       renderResult(result);
     });
   };
 
   function renderResult(result) {
-    var resultItem = "<li>" + result.song.title + "</li>";
-    $songsContainer.append(resultItem);
+    var resultItem = '<li class="result">Track: ' +
+        result.song.title + '<br/>Artist: ' +
+        result.artist.name + '<br/>Album: ' +
+        result.album.title +
+        '</li>';
+    $resultsContainer.append(resultItem);
   };
 });
