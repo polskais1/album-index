@@ -17,7 +17,7 @@ artists.each do |artist|
   10.times do |albums_i|
     album = Album.create(title: "#{artist.name}'s album no. #{albums_i + 1}", artist: artist)
     5.times do |songs_i|
-      Song.create(title: "#{album.title}'s track no #{songs_i + 1}", album: album)
+      Song.create(title: "#{album.title}'s track no. #{songs_i + 1}", album: album)
       print '.'
     end
   end
