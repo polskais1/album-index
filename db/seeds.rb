@@ -12,9 +12,14 @@ artists = [
   Artist.create(name: 'Susanne Sundfor')
 ]
 
-puts 'seeding albums'
 artists.each do |artist|
-  10.times do |i|
-    Album.create title: "#{artist.name}'s album no. #{i + 1}", artist: artist
+  puts "seeding albums and songs for #{artist.name}"
+  10.times do |albums_i|
+    album = Album.create(title: "#{artist.name}'s album no. #{albums_i + 1}", artist: artist)
+    5.times do |songs_i|
+      Song.create(title: "#{album.title}'s track no #{songs_i + 1}", album: album)
+      print '.'
+    end
   end
+  puts
 end
