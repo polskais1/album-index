@@ -3,6 +3,7 @@ $().ready(function() {
   var $resultsContainer = $('#results-container');
 
   $("#search-field").keyup(function(event) {
+    // Clear out the queued ajax call so that the server is not called on each keyup
     clearTimeout(searchFieldTimeoutId);
 
     searchFieldTimeoutId = setTimeout(function() {
